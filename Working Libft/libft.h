@@ -10,41 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-*/
-• isalpha
-• isdigit
-• isalum
-• isascii
-• isprint
-• strlen
-• memset
-• bzero
-• memcpy
-• memmove
-• strlcpy
-• strlcat
-• toupper
-• tolower
-• strchr
-• strrchr
-• strncmp
-• memchr
-• memcmp
-• strnstr
-• atoi
-• calloc
-• strdup
 
-ft_substr
-ft_strjoin
-ft_strtrim
-ft_split
-ft_itoa
-ft_strmapi
-ft_striteri
-ft_putchar_fd
-ft_putstr_fd
-ft_putnbr_fd
+#ifndef	LIBFT_H
+# define LIBFT_H
+
+# include <stdlib.h>
+# include <unistd.h>
+
+/*
+typedef	struct		s_list
+{
+	void		*content;
+	struct s_list	*next;
+}			t_list;
 */
 
 int	ft_isalpha(int s);
@@ -84,7 +62,7 @@ void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 
-
+#endif
 
 
 
