@@ -6,16 +6,16 @@
 /*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:22:56 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/13 12:41:48 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/19 09:07:54 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_char_in_set(char * c, char *my_set)
+static int	ft_char_in_set(char *c, char *my_set)
 {
 	int	i;
-	
+
 	i = 0;
 	while (set[i] != '\0')
 	{
@@ -29,7 +29,7 @@ static int	ft_char_in_set(char * c, char *my_set)
 static int	ft_find_cf(char *my_s1, char *my_set)
 {
 	int	cf;
-	
+
 	cf = 0;
 	while (ft_char_in_set(my_s1[cf], my_set) == 1 && my_s1[cf] != '\0')
 		cf++;
@@ -38,19 +38,19 @@ static int	ft_find_cf(char *my_s1, char *my_set)
 
 static int	ft_find_cb(char *my_s1, char *my_set)
 {
-	int 	cb;
-	
+	int	cb;
+
 	cb = ft_strnlen(my_s1) - 1;
 	while (ft_char_in_set(my_s1[cb], my_set) == 1 && cb > 0)
 		cb--;
-	return	(cb);
+	return (cb);
 }
 
 static int	ft_len(char *my_s1, char *my_set)
 {
 	int	cf;
 	int	cb;
-	
+
 	cf = ft_find_cf(my_s1, my_set);
 	cb = ft_find_cb(my_s1, my_set);
 	return (cb - cf + 1);
@@ -60,9 +60,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*my_s1;
 	char	*my_set;
-	int	cf;
-	int	cb;
-	int	i;
+	int		cf;
+	int		cb;
+	int		i;
 	char	*trm_str;
 
 	my_s1 = (char *)(s1);
@@ -70,11 +70,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (my_s1 == 0 || my_set == 0)
 		return (my_s1);
 	cf = ft_find_cf(my_s1, my_set) - 1;
-	cb = ft_find_cb(my_s1, my_set); 
+	cb = ft_find_cb(my_s1, my_set);
 	if (cb - cf <= 0)
 	{
 		if (!(trm_str = malloc(sizeof(char))))
-			return(0);
+			return (0);
 		trm_str[0] = '\0';
 		return (trm_str);
 	}
