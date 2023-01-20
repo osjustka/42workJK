@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkabelko <jkabelko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 11:41:34 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/11 11:51:44 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:38:11 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c > 64 && c < 91)
-        return (c);
-    else if (c > 96 && c < 123)
-        return (c - 32);
-    else
-        return (c);
+	if (c > 64 && c < 91)
+		return (c);
+	else if (c > 96 && c < 123)
+		return (c - 32);
+	else
+		return (c);
 }

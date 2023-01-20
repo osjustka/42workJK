@@ -6,7 +6,7 @@
 /*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:15:45 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/19 13:23:53 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:21:13 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	{
 		while (s[i] != '\0')
 		{
-			f(i, &s[i])
-				i++;
+			f(i, &s[i]);
+			i++;
 		}
 	}
 }

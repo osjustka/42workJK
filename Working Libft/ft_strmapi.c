@@ -6,7 +6,7 @@
 /*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:21:22 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/19 13:13:09 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:31:48 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	arr_s[len] = '\0';
 	while (my_s[i] != '\0')
 	{
-		arr_s[i] = f(i, my_s[i])
-			i++;
+		arr_s[i] = f(i, my_s[i]);
+		i++;
 	}
 	return (arr_s);
 }

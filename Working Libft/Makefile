@@ -11,10 +11,9 @@
 # **************************************************************************** #
 
 NAME = libft.a
-
-SRCS	=	ft_isalpha.c \
+SRC = ft_isalpha.c \
 		ft_isdigit.c \
-		ft_isalum.c \
+		ft_isalnum.c \
 		ft_isascii.c \
 		ft_isprint.c \
 		ft_strlen.c \
@@ -45,8 +44,7 @@ SRCS	=	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putnbr_fd.c 
-
-BONUS	=	ft_lstadd_back.c \
+BONUS =	ft_lstadd_back.c \
 		ft_lstadd_front.c \
 		ft_lstclear.c \
 		ft_lstdelone.c \
@@ -55,32 +53,31 @@ BONUS	=	ft_lstadd_back.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
 		ft_lstsize.c
-
-CC	=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
-
-OBJS	= $(SRCS:.c=.o)
-BONUS_OBJS 	= $(BONUS:.c=.o)
-
-LINK = ar rc
-#r means that if the library already exists, replace the old files within the library with
-# your new files. c means create the library if it did not exist.
+CC =	gcc
+CFLAGS =	-Wall -Wextra -Werror
+OBJS = $(SRC:.c=.o)
+BONUS_OBJS = $(BONUS:.c=.o)
+AR = ar rc
+RM = rm -f
 
 all:		$(NAME)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
 $(NAME):	$(OBJS)
-		$(LINK) $(NAME) $(OBJS)
+		$(AR) $(NAME) $(OBJS)
+
 
 bonus:		$(OBJS) $(BONUS_OBJS)
-		$(LINK) $(NAME) $(OBJS) $(BONUS_OBJS)
+		$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 		
 clean:
-		rm -f $(OBJS) $(BONUS_OBJS)
+		$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:		clean
-		rm -f $(NAME)
+		$(RM) $(NAME)
 
 re:		fclean all
 
 .PHONY:		all clean fclean re bonus
-#explicitly declaration of the target to be phony - making it a prerequisite of the special target

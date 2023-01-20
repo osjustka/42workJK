@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 09:45:15 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/20 11:32:35 by jkabelko         ###   ########.fr       */
+/*   Created: 2023/01/20 10:45:26 by jkabelko          #+#    #+#             */
+/*   Updated: 2023/01/20 10:54:15 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char *my_s1;
-	char *my_s2;
-	size_t i;
-	int len1;
-	int len2;
+	unsigned int m;
 
-	my_s1 = (char *)(s1);
-	my_s2 = (char *)(s2);
-	i = 0;
-	if (n > 0)
+	m = (unsigned int)(n);
+	if (n < 0)
 	{
-		while ((my_s1[i] == my_s2[i]) &&
-				((my_s1[i] != '\0') || (my_s2[i] != '\0')) && i < n - 1)
-		{
-			i++;
-		}
-		return ((unsigned char)(my_s1[i]) - (unsigned char)(my_s2[i]));
+		ft_putchar_fd('-', fd);
+		m *= -1;
 	}
-	return (0);
+	if (n >= 10)
+	{
+		ft_putnbr_fd(m / 10, fd);
+		ft_putnbr_fd(m % 10, fd);
+	}
+	else
+		ft_putchar_fd('0' + m, fd);
 }

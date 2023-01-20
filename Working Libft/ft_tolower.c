@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkabelko <jkabelko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 11:52:28 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/11 11:54:51 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:37:48 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c > 64 && c < 91)
-        return (c + 32);
-    else if (c > 96 && c < 123)
-        return (c);
-    else
-        return (c);
+	if (c > 64 && c < 91)
+		return (c + 32);
+	else if (c > 96 && c < 123)
+		return (c);
+	else
+		return (c);
 }
-

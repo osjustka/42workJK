@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkabelko <jkabelko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 10:05:34 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/10 10:05:50 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:59:38 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int s)
 {
 	if (s >= 0 && s <= 127)
 		return (1);
 	else
-		return (0);	
+		return (0);
 }

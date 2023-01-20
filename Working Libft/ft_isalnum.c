@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkabelko <jkabelko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 10:05:06 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/10 10:05:19 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:59:05 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int s)
 {
-	if ((s > 64 && s < 91) || (s > 96 && s < 123) || (s > 47 && s < 58)) 
-		return(1);
-	else 
-		return(0); 
+	if ((s > 64 && s < 91) || (s > 96 && s < 123) || (s > 47 && s < 58))
+		return (1);
+	else
+		return (0);
 }

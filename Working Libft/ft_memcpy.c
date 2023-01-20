@@ -3,37 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkabelko <jkabelko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jkabelko <jkabelko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 09:22:03 by jkabelko          #+#    #+#             */
-/*   Updated: 2023/01/11 10:41:40 by jkabelko         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:17:01 by jkabelko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    size_t				i;
-	unsigned char		*dst;
-	unsigned char   	*tex;
+	size_t i;
+	unsigned char *dst;
+	unsigned char *txt;
 
-    if (dest == 0 && src == 0)
+	if (dest == 0 || src == 0)
 	{
 		return (0);
 	}
 	i = 0;
-	dst =(unsigned char*) dest;
-	tex = (unsigned char*) src;
-	/*
-    test for ft_strncmp((char *)dst, (char *)tex, n) == 0))??
-    */
-
-    while (i < n)
+	dst = (unsigned char *)(dest);
+	txt = (unsigned char *)(src);
+	while (i < n)
 	{
-		dst[i] = tex[i];
+		dst[i] = txt[i];
 		i++;
 	}
 	return (dest);
-
 }
