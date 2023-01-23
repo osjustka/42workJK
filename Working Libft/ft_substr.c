@@ -14,16 +14,17 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *my_s;
-	char *my_string;
-	unsigned int i;
+	unsigned int	i;
+	char			*my_s;
+	char			*my_string;
 
 	if (s == 0)
 		return (0);
 	my_s = (char *)(s);
 	if (start >= (unsigned int)(ft_strlen(my_s)))
 	{
-		if (!(my_string = (char *)malloc(sizeof(char))))
+		my_string = (char *)malloc(sizeof(char));
+		if (my_string == NULL)
 			return (0);
 		my_string[0] = 0;
 		return (my_string);

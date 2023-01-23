@@ -23,20 +23,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	my_little = (char *)(little);
 	i = 0;
 	if (my_little[0] == '\0')
-		retunr(my_big) while (my_big[i] != '\0' && i < len)
+		retunr(my_big);
+	while (my_big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (my_big[i + j] == my_little[j] && i + j < len \
+		&& my_little[j] != '\0' && my_big[i + j] != '\0')
 		{
-			if (my_big[i] == my_little[j])
-			{
-				j = 0;
-				while (i + j < len && my_big[i + j] == my_little[j]
-					&& my_little[j] != '\0' && my_big[i + j] != '\0')
-				{
-					j++;
-				}
-				if (my_little[j] == '\0')
-					return (&my_big[i]);
-			}
-			i++;
+			j++;
 		}
+		if (my_little[j] == '\0')
+			return (&my_big[i]);
+		i++;
+	}
 	return (0);
 }

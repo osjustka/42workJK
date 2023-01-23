@@ -14,19 +14,19 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char *my_s1;
-	char *my_s2;
-	size_t i;
-	int len1;
-	int len2;
+	int		len1;
+	int		len2;
+	size_t	i;
+	char	*my_s1;
+	char	*my_s2;
 
 	my_s1 = (char *)(s1);
 	my_s2 = (char *)(s2);
 	i = 0;
 	if (n > 0)
 	{
-		while ((my_s1[i] == my_s2[i]) &&
-				((my_s1[i] != '\0') || (my_s2[i] != '\0')) && i < n - 1)
+		while ((my_s1[i] == my_s2[i]) && \
+		((my_s1[i] != '\0') || (my_s2[i] != '\0')) && i < n - 1)
 		{
 			i++;
 		}

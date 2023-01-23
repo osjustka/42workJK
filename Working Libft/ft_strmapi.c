@@ -24,7 +24,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	my_s = (char *)(s);
 	i = 0;
 	len = ft_strlen(my_s);
-	if (!(arr_s = malloc(sizeof(char) * (len + 1))))
+	arr_s = malloc(sizeof(char) * (len + 1));
+	if (arr_s == NULL)
 		return (0);
 	arr_s[len] = '\0';
 	while (my_s[i] != '\0')

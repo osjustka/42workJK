@@ -14,10 +14,10 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *my_string;
-	char *my_s;
-	int len;
-	int i;
+	char	*my_string;
+	char	*my_s;
+	int		len;
+	int		i;
 
 	my_s = (char *)(s);
 	i = 0;
@@ -27,15 +27,15 @@ char	*ft_strdup(const char *s)
 		len++;
 		i++;
 	}
-	my_string = (char *)malloc(sizeof(char)*(len +1);
-    if (my_string == NULL)
-        return (0);
-    i = 0;
-    while(my_s[i] != '\0')
-    {
+	my_string = (char *)malloc(sizeof(char) * (len + 1));
+	if (my_string == NULL)
+		return (0);
+	i = 0;
+	while (my_s[i] != '\0')
+	{
 		my_string[i] = my_s[i];
 		i++;
-    }
-    my_string[i] = '\0';
-    return(&my_string);
+	}
+	my_string[i] = '\0';
+	return (&my_string);
 }

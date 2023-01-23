@@ -18,8 +18,8 @@ static int	ft_count(char *my_s, char c)
 	int	count;
 
 	if (my_s == 0 || my_s[0] == 0)
-		return (0)
-					i = 1;
+		return (0);
+	i = 1;
 	count = 0;
 	if (my_s[0] != c)
 		count++;
@@ -31,6 +31,7 @@ static int	ft_count(char *my_s, char c)
 	}
 	return (count);
 }
+
 static int	ft_next_count(char *my_s, char c, int i)
 {
 	int	count;
@@ -38,7 +39,7 @@ static int	ft_next_count(char *my_s, char c, int i)
 	count = 0;
 	while (my_s[i] == c && my_s[i] != '\0')
 		i++;
-	while ((my_s[i] != '\0' && my_s[i] != c))
+	while (my_s[i] != '\0' && my_s[i] != c)
 	{
 		count++;
 		i++;
@@ -65,39 +66,37 @@ static char	**ft_free(char **arr_s, int i)
 	j = 0;
 	while (j < i && arr_s[i] != 0)
 	{
-		free(arr_s[j])
-			j++;
+		free(arr_s[j]);
+		j++;
 	}
 	free(arr_s);
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *str, char c)
 {
-	char *my_s;
-	int i;
-	int j;
-	int si;
-	char *arr_s;
+	char	*arr_s;
+	int		i;
+	int		j;
+	int		si;
 
-	my_s = s;
-	if (my_s == 0)
-		return (0);
 	si = 0;
 	i = -1;
-	if (!(arr_s = ft_malloc(my_s, c)))
+	arr_s = ft_malloc(str, c);
+	if (arr_s == NULL)
 		return (0);
-	while (++i < ft_count(my_s, c)
-    {
+	while (++i < ft_count(str, c))
+	{
 		j = 0;
-		if (!(arr_s[i] = malloc(ft_next_count(my_s, c, si) + 1)))
+		arr_s[i] = malloc(ft_next_count(str, c, si) + 1);
+		if (arr_s[i] == 0)
 			return (ft_free(arr_s, i));
-		while (my_s[si] != '\0' && my_s[si] == c)
-			s++;
-		while (my_s[si] != '\0' && my_s[si] != c)
-			arr_s[i][j++] = my_s[s++];
+		while (str[si] != '\0' && str[si] == c)
+			si++;
+		while (str[si] != '\0' && str[si] != c)
+			arr_s[i][j++] = str[s++];
 		arr_s[i][j] = '\0';
-    }
+	}
 	arr_s[i] = '\0';
-    return (arr_s);
+	return (arr_s);
 }

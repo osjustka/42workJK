@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int len;
-	char *my_s;
+	char	*my_s;
+	int		i;
+	int		len;
 
 	my_s = (char *)(s);
 	i = 0;

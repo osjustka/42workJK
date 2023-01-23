@@ -66,16 +66,16 @@ static int	ft_mem_size(int m)
 
 char	*ft_itoa(int n)
 {
-	unsigned int m;
-	int i;
-	int mem_size;
-	char *s;
+	unsigned int	m;
+	int				mem_size;
+	int				i;
+	char			*s;
 
 	m = n;
 	i = 0;
-	ft_putnbr
-		mem_size = ft_mem_size(m);
-	if (!(s = malloc(sizeof(char) * (mem_size + 1))))
+	mem_size = ft_mem_size(m);
+	s = malloc(sizeof(char) * (mem_size + 1));
+	if (s == 0)
 		return (0);
 	if (n < 0)
 	{

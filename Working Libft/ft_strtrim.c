@@ -17,7 +17,7 @@ static int	ft_char_in_set(char *c, char *my_set)
 	int	i;
 
 	i = 0;
-	while (set[i] != '\0')
+	while (my_set[i] != '\0')
 	{
 		if (c == my_set[i])
 			return (1);
@@ -40,7 +40,7 @@ static int	ft_find_cb(char *my_s1, char *my_set)
 {
 	int	cb;
 
-	cb = ft_strnlen(my_s1) - 1;
+	cb = ft_strlen(my_s1) - 1;
 	while (ft_char_in_set(my_s1[cb], my_set) == 1 && cb > 0)
 		cb--;
 	return (cb);
@@ -60,29 +60,27 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*my_s1;
 	char	*my_set;
-	int		cf;
-	int		cb;
-	int		i;
 	char	*trm_str;
+	int		i;
+	int		j;
 
 	my_s1 = (char *)(s1);
 	my_set = (char *)(set);
-	if (my_s1 == 0 || my_set == 0)
-		return (my_s1);
-	cf = ft_find_cf(my_s1, my_set) - 1;
-	cb = ft_find_cb(my_s1, my_set);
-	if (cb - cf <= 0)
+	if (ft_find_cb(my_s1, my_set) - (ft_find_cf(my_s1, my_set) - 1) <= 0)
 	{
-		if (!(trm_str = malloc(sizeof(char))))
+		trm_str = malloc(sizeof(char));
+		if (trm_str == 0)
 			return (0);
 		trm_str[0] = '\0';
 		return (trm_str);
 	}
-	if (!(trm_str = malloc(sizeof(char) * (ft_len(my_s1, my_set) + 1))))
+	j = -1;
+	trm_str = malloc(sizeof(char) * (ft_len(my_s1, my_set) + 1));
+	if (trm_str == 0)
 		return (0);
 	i = -1;
-	while (++cf <= cb && my_s1[cf] != '\0')
-		trm_str[++i] = my_s1[cf];
-	trm_str[++i] = '\0';
+	while (++i <= ft_find_cb(my_s1, my_set) && my_s1[j] != '\0')
+		trm_str[++j] = my_s1[i];
+	trm_str[++j] = '\0';
 	return (trm_str);
 }
