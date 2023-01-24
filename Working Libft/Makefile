@@ -23,16 +23,6 @@ SRC		=	ft_atoi.c \
 			ft_isdigit.c \
 			ft_isprint.c \
 			ft_itoa.c \
-			ft_lstadd_back.c \
-			ft_lstadd_front.c \
-			ft_lstclear.c \
-			ft_lstdelone.c \
-			ft_lstiter.c \
-			ft_lstlast.c \
-			ft_lstmap.c \
-			ft_lstnew.c \
-			ft_lstsize.c \
-			ft_memccpy.c \
 			ft_memchr.c \
 			ft_memcmp.c \
 			ft_memcpy.c \
@@ -56,18 +46,8 @@ SRC		=	ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c
-
-BONUS		=	ft_lstadd_back.c \
-			ft_lstadd_front.c \
-			ft_lstclear.c \
-			ft_lstdelone.c \
-			ft_lstiter.c \
-			ft_lstlast.c \
-			ft_lstmap.c \
-			ft_lstnew.c \
-			ft_lstsize.c
-
+			ft_toupper.c 
+			
 MAIN_PART	=	$(filter-out $(BONUS), $(SRC))
 OBJS		=	$(SRC:.c=.o)
 MAIN_PART_OBJS	=	$(MAIN_PART:.c=.o)
@@ -79,9 +59,6 @@ all: 		$(NAME)
 $(NAME):	$(MAIN_PART_OBJS)
 			$(LINK) $(NAME) $(MAIN_PART_OBJS)
 
-bonus:		$(OBJS)
-			$(LINK) $(NAME) $(OBJS)
-
 clean:
 		rm -f $(OBJS)
 
@@ -90,5 +67,4 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY:		all clean fclean re bonus
-
+.PHONY:		all clean fclean re

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_count(char *my_s, char c)
+static int	ft_count(const char *my_s, char c)
 {
 	int	i;
 	int	count;
@@ -32,7 +32,7 @@ static int	ft_count(char *my_s, char c)
 	return (count);
 }
 
-static int	ft_next_count(char *my_s, char c, int i)
+static int	ft_next_count(const char *my_s, char c, int i)
 {
 	int	count;
 
@@ -47,7 +47,7 @@ static int	ft_next_count(char *my_s, char c, int i)
 	return (count);
 }
 
-static char	**ft_malloc(char *my_s, char c)
+static char	**ft_malloc(const char *my_s, char c)
 {
 	int		len;
 	char	**arr_s;
@@ -73,28 +73,28 @@ static char	**ft_free(char **arr_s, int i)
 	return (0);
 }
 
-char	**ft_split(char const *str, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	*arr_s;
+	char	**arr_s;
 	int		i;
 	int		j;
 	int		si;
 
 	si = 0;
 	i = -1;
-	arr_s = ft_malloc(str, c);
+	arr_s = ft_malloc(s, c);
 	if (arr_s == NULL)
 		return (0);
-	while (++i < ft_count(str, c))
+	while (++i < ft_count(s, c))
 	{
 		j = 0;
-		arr_s[i] = malloc(ft_next_count(str, c, si) + 1);
+		arr_s[i] = malloc(ft_next_count(s, c, si) + 1);
 		if (arr_s[i] == 0)
 			return (ft_free(arr_s, i));
-		while (str[si] != '\0' && str[si] == c)
+		while (s[si] != '\0' && s[si] == c)
 			si++;
-		while (str[si] != '\0' && str[si] != c)
-			arr_s[i][j++] = str[s++];
+		while (s[si] != '\0' && s[si] != c)
+			arr_s[i][j++] = s[si++];
 		arr_s[i][j] = '\0';
 	}
 	arr_s[i] = '\0';

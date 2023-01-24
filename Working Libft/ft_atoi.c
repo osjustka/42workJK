@@ -15,11 +15,11 @@ static int	ft_extrm(int sum, unsigned long long extrm_sum, int sign)
 	unsigned long long	max_i;
 	unsigned long long	min_i;
 
-	min = 9223372036854775808U;
-	max = 9223372036854775807U;
-	if (extrm_sum > max && sign == 1)
+	min_i = 9223372036854775808U;
+	max_i = 9223372036854775807U;
+	if (extrm_sum > max_i && sign == 1)
 		return (-1);
-	if (extrm_sum > min && sign == -1)
+	if (extrm_sum > min_i && sign == -1)
 		return (0);
 	return (sum * sign);
 }
@@ -49,7 +49,7 @@ int	ft_atoi(const char *nptr)
 	extrm_sum = 0;
 	i = 0;
 	sign = 1;
-	while (my_nptr[i] == 32 || (my_nptr[i] > 8 && my_nptr[i] < 14) \
+	while ((my_nptr[i] == 32 || (my_nptr[i] > 8 && my_nptr[i] < 14)) \
 	&& nptr[i] != '\0')
 		i++;
 	i = ft_sign(my_nptr, i, &sign);

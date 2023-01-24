@@ -19,7 +19,7 @@ static int	ft_char_in_set(char *c, char *my_set)
 	i = 0;
 	while (my_set[i] != '\0')
 	{
-		if (c == my_set[i])
+		if (c == &my_set[i])
 			return (1);
 		i++;
 	}
@@ -31,7 +31,7 @@ static int	ft_find_cf(char *my_s1, char *my_set)
 	int	cf;
 
 	cf = 0;
-	while (ft_char_in_set(my_s1[cf], my_set) == 1 && my_s1[cf] != '\0')
+	while (ft_char_in_set(&my_s1[cf], my_set) == 1 && my_s1[cf] != '\0')
 		cf++;
 	return (cf);
 }
@@ -41,7 +41,7 @@ static int	ft_find_cb(char *my_s1, char *my_set)
 	int	cb;
 
 	cb = ft_strlen(my_s1) - 1;
-	while (ft_char_in_set(my_s1[cb], my_set) == 1 && cb > 0)
+	while (ft_char_in_set(&my_s1[cb], my_set) == 1 && cb > 0)
 		cb--;
 	return (cb);
 }

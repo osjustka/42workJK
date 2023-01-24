@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	my_little = (char *)(little);
 	i = 0;
 	if (my_little[0] == '\0')
-		retunr(my_big);
+		return (my_big);
 	while (my_big[i] != '\0' && i < len)
 	{
 		j = 0;
