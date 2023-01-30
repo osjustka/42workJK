@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 static int	ft_extrm(int sum, unsigned long long extrm_sum, int sign)
 {
 	unsigned long long	max_i;
@@ -49,11 +51,10 @@ int	ft_atoi(const char *nptr)
 	extrm_sum = 0;
 	i = 0;
 	sign = 1;
-	while ((my_nptr[i] == 32 || (my_nptr[i] > 8 && my_nptr[i] < 14)) \
-	&& nptr[i] != '\0')
+	while (my_nptr[i] == 32 || (my_nptr[i] > 8 && my_nptr[i] < 14))
 		i++;
 	i = ft_sign(my_nptr, i, &sign);
-	while (nptr[i] != '\0' && (nptr[i] >= '0' && nptr[i] <= 9))
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		sum = sum * 10 + (my_nptr[i] - '0');
 		extrm_sum = extrm_sum * 10 + (my_nptr[i] - '0');

@@ -47,24 +47,44 @@ SRC		=	ft_atoi.c \
 			ft_substr.c \
 			ft_tolower.c \
 			ft_toupper.c 
+
+BONUS		=	ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c
 			
-MAIN_PART	=	$(filter-out $(BONUS), $(SRC))
-OBJS		=	$(SRC:.c=.o)
-MAIN_PART_OBJS	=	$(MAIN_PART:.c=.o)
-NAME		=	libft.a
-LINK		=	ar rc
+MAIN_PART	:=	$(filter-out $(BONUS), $(SRC))
+OBJS		:=	$(SRC:.c=.o)
+MAIN_PART_OBJS	:=	$(MAIN_PART:.c=.o)
+NAME		:=	libft.a
+LINK		:=	ar rcs
+RM		:= 	rm -rf
+
+$(NAME):	$(MAIN_PART_OBJS)
+		$(LINK) $(NAME) $(MAIN_PART_OBJS)
 
 all: 		$(NAME)
 
-$(NAME):	$(MAIN_PART_OBJS)
-			$(LINK) $(NAME) $(MAIN_PART_OBJS)
+bonus:		$(OBJS)
+		$(LINK) $(NAME) $(OBJS)
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 clean:
-		rm -f $(OBJS)
+		$(RM) $(OBJS)
 
 fclean:		clean
-		rm -f $(NAME)
+		$(RM) $(NAME)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
-re:		fclean all
+re:		clean fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
