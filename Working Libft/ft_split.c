@@ -83,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	si = 0;
 	i = -1;
 	arr_s = ft_malloc(s, c);
-	if (arr_s == NULL)
+	if (arr_s == NULL || s == NULL)
 		return (NULL);
 	while (++i < ft_count(s, c))
 	{
@@ -97,6 +97,6 @@ char	**ft_split(char const *s, char c)
 			arr_s[i][j++] = s[si++];
 		arr_s[i][j] = '\0';
 	}
-	arr_s[i] = '\0';
+	arr_s[i] = 0;
 	return (arr_s);
 }

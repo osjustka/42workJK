@@ -66,7 +66,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	my_s1 = (char *)(s1);
 	my_set = (char *)(set);
-	if (ft_find_cb(my_s1, my_set) - (ft_find_cf(my_s1, my_set) - 1) <= 0)
+	i = ft_find_cf(my_s1, my_set) - 1;
+	if (ft_find_cb(my_s1, my_set) - i <= 0)
 	{
 		trm_str = malloc(sizeof(char));
 		if (trm_str == NULL)
@@ -78,8 +79,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trm_str = malloc(sizeof(char) * (ft_len(my_s1, my_set) + 1));
 	if (trm_str == NULL)
 		return (NULL);
-	i = -1;
-	while (++i <= ft_find_cb(my_s1, my_set) && my_s1[j] != '\0')
+	while (++i <= ft_find_cb(my_s1, my_set) && my_s1[i] != '\0')
 		trm_str[++j] = my_s1[i];
 	trm_str[++j] = '\0';
 	return (trm_str);

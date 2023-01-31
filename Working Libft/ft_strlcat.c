@@ -23,10 +23,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	my_src = (char *)(src);
 	if ((dst == NULL || src == NULL) && size == 0)
 		return (size);
-	len_s = ft_strlen(my_src);
-	len_d = ft_strlen(dst);
+	len_d = ft_strlen((const char *)(dst));
+	len_s = ft_strlen((const char *)(my_src));
 	i = len_d;
-	if (size == 0 || i >= (size - 1))
+	if (size == 0 || i >= size)
 		return (size + len_s);
 	j = 0;
 	while (src[j] != '\0' && i < (size - 1))
