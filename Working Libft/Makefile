@@ -46,7 +46,16 @@ SRC		=	ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c 
+			ft_toupper.c \
+			ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c
 
 BONUS		=	ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -73,18 +82,18 @@ all: 		$(NAME)
 bonus:		$(OBJS)
 		$(LINK) $(NAME) $(OBJS)
 
+# ******TAKE OUT******* #
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
+# ******TAKE OUT******* #
+
 clean:
 		$(RM) $(OBJS)
 
 fclean:		clean
 		$(RM) $(NAME)
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 re:		clean fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re bonus so
