@@ -18,4 +18,6 @@ int	ft_isprint(int c)
 		return (1);
 	else
 		return (0);
-}
+}/*
+isprint() - checks for any printable character including space. 
+*/

@@ -20,4 +20,4 @@ void	*ft_memset(void *s, int c, size_t n)
 	while (n--)
 		*a++ = (unsigned char)(c);
 	return (s);
-}
+}/*The memmove() function returns a pointer to dest. Return value: function returns a pointer to the memory area s.*/

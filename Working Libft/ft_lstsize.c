@@ -23,4 +23,4 @@ int	ft_lstsize(t_list *lst)
 		count++;
 	}
 	return (count);	
-}
+}/* Counts the number of nodes in a list. Return value: The length of the list. */
