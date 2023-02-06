@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_tolower() - converts the letter c to lower case, if possible.
+Return Value: The value returned is that of the converted letter, or c if 
+the conversion was not possible.*/
+
 #include "libft.h"
 
 int	ft_tolower(int c)

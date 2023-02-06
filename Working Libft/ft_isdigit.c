@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* sdigit() - checks for a digit (0 through 9). */
+
 #include "libft.h"
 
 int	ft_isdigit(int s)
@@ -18,6 +20,4 @@ int	ft_isdigit(int s)
 		return (1);
 	else
 		return (0);
-}/*
-sdigit() - checks for a digit (0 through 9). 
-*/
+}

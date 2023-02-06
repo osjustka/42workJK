@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Adds the node ’new’ at the end of the list.*/
+
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*pnt;
 	
-	if (lst == 0 || new == 0)
+	if (new == 0)
 		return ;
 	pnt = *lst;
 	if (pnt == 0)
-		*lst = new;
-	else
 	{
-		while (pnt->next != 0)
-			pnt = pnt->next;
-		pnt->next = new;
-		new->next = 0;
+		*lst = new;
+		return;
 	}
-}/* Adds the node ’new’ at the end of the list.*/
+	pnt = ft_lstlast(*lst);
+	pnt->next = new;
+}

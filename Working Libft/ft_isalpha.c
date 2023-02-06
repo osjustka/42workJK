@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isalpha() - checks for an alphabetic character; in the standard "C"
+locale, it is equivalent to (isupper(c) || islower(c)).*/
+
 #include "libft.h"
 
 int	ft_isalpha(int s)
@@ -18,5 +21,4 @@ int	ft_isalpha(int s)
 		return (1);
 	else
 		return (0);
-}/*
-isalpha() - checks for an alphabetic character; in the standard "C" locale, it is equivalent to (isupper(c) || islower(c)).*/
+}

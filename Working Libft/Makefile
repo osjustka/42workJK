@@ -39,6 +39,7 @@ SRC		=	ft_atoi.c \
 			ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
+			ft_striteri.c \
 			ft_strmapi.c \
 			ft_strncmp.c \
 			ft_strnstr.c \
@@ -82,12 +83,6 @@ all: 		$(NAME)
 bonus:		$(OBJS)
 		$(LINK) $(NAME) $(OBJS)
 
-# ******TAKE OUT******* #
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-# ******TAKE OUT******* #
-
 clean:
 		$(RM) $(OBJS)
 
@@ -96,4 +91,4 @@ fclean:		clean
 
 re:		clean fclean all
 
-.PHONY:		all clean fclean re bonus so
+.PHONY:		all clean fclean re bonus

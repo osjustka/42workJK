@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_itoa() - allocates (with malloc(3)) and returns a string representing
+the integer n received as an argument. Handles negative numbers.
+Return value: The string representing the integer.
+NULL if the allocation fails.*/
+
 #include "libft.h"
 
 static void	ft_putnbr(unsigned int m, char *s, int i)
@@ -91,4 +96,4 @@ char	*ft_itoa(int n)
 	}
 	ft_putnbr(m, s, i);
 	return (print_s(s, i));
-}/* Allocates (with malloc(3)) and returns a string representing the integer n received as an argument. Handles negative numbers. Return value - The string representing the integer. NULL if the allocation fails.*/
+}

@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_strtrim() - allocates (with malloc(3)) and returns a copy of ’s1’ with
+the characters specified in ’set’ removed from the beginning and the end of 
+the string. Return value: The trimmed string. NULL if the allocation fails.*/
+
 #include "libft.h"
 
 static int	ft_char_in_set(char c, char *my_set)

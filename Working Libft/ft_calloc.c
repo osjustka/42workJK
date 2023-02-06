@@ -10,13 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The calloc() function allocates memory for an array of nmemb elements of
+size bytes each and returns a pointer to the allocated memory.  The memory is
+set to zero.  If nmemb or size is 0, then calloc() returns either NULL,
+or a  unique  pointer  value that  can  later  be successfully passed to free().
+If the multiplication of nmemb and size would result in integer overflow,
+then calloc() returns an error. */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*my_mem;
+	void				*my_mem;
 	unsigned long long	check;
-	
+
 	if (size != 0)
 	{
 		check = nmemb * size;
@@ -34,7 +41,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ft_bzero(my_mem, nmemb * size);
 	return (my_mem);
-}/* void *calloc(size_t nmemb, size_t size)
-The malloc() function allocates size bytes and returns a pointer to the allocated memory. The memory is not initialized. If size is 0, then malloc() returns either NULL, or a unique pointer value that can later be successfully passed to free().
-On error, function returns NULL. 
-*/
+}

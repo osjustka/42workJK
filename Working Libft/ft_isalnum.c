@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isalnum() - checks for an alphanumeric character;
+it is equivalent to (isalpha(c) || isdigit(c)).
+Return Value: The values returned are nonzero if the character c falls
+into the tested class, and a zero value if not. */
+
 #include "libft.h"
 
 int	ft_isalnum(int s)
@@ -18,8 +23,4 @@ int	ft_isalnum(int s)
 		return (1);
 	else
 		return (0);
-}/* int isalnum(int c);
-isalnum() - checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c)).
-	Return Value
-The values returned are nonzero if the character c falls into the tested class, and a zero value if not.  
-*/
+}

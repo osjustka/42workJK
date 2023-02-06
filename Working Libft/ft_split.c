@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_split - allocates (with malloc(3)) and returns an array of strings
+obtained by splitting ’s’ using the character ’c’ as a delimiter.
+The array must end with a NULL pointer. Return value: The array of new strings
+resulting from the split. NULL if the allocation fails.*/
+
 #include "libft.h"
 
 static int	ft_count(const char *my_s, char c)
@@ -99,4 +104,4 @@ char	**ft_split(char const *s, char c)
 	}
 	arr_s[i] = 0;
 	return (arr_s);
-}/* Allocates (with malloc(3)) and returns an array of strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The array must end with a NULL pointer. Return value: The array of new strings resulting from the split. NULL if the allocation fails.*/
+}

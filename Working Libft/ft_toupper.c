@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_toupper() - If c is a lowercase letter, toupper() returns its uppercase
+equivalent. RETURN VALUE:   The value returned is that of the converted letter,
+or c if the conversion was not possible. */
+
 #include "libft.h"
 
 int	ft_toupper(int c)

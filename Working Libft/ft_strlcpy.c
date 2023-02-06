@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The ft_strlcpy() - function copies strings. strlcpy() takes the full size
+of the buffer (not just the length) and guarantee to NUL-terminate the result
+(as long as size is larger than 0. Note that a byte for the NUL should be
+included in size.  src must be NUL-terminated. The function copies up to
+size - 1 characters from the NUL-ter‐minated string src to dst,
+NUL-terminating the result. */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

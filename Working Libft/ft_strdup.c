@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*The ft_strdup() - function  returns a pointer to a new string which is
+a duplicate of the string s.  Memory for the new string is obtained with
+malloc(3), and can be freed with free(3). Return value: On success,
+the strdup() function returns a pointer to the duplicated string.
+It returns NULL if insufficient memory was available. */
+
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
@@ -21,12 +27,7 @@ char	*ft_strdup(const char *s)
 
 	my_s = (char *)(s);
 	i = 0;
-	len = 0;
-	while (my_s[i] != '\0')
-	{
-		len++;
-		i++;
-	}
+	len = ft_strlen(my_s);
 	my_string = (char *)malloc(sizeof(char) * (len + 1));
 	if (my_string == NULL)
 		return (0);

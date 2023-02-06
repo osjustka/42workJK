@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The memcpy() function copies n bytes from memory area src to memory area
+dest.  The memory areas must not overlap. Return value: The memcpy() function
+returns a pointer to dest. */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -31,5 +35,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return (dest);
-}/* The memcpy() function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap. Return value: The memcpy() function returns a pointer to dest. */
-
+}

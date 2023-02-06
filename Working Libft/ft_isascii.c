@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_isascii() - checks whether c is a 7-bit unsigned char value that fits
+into the ASCII character set. The values returned are nonzero if the character
+c falls into the tested class, and a zero value if not.*/
+
 #include "libft.h"
 
 int	ft_isascii(int s)
@@ -18,7 +22,4 @@ int	ft_isascii(int s)
 		return (1);
 	else
 		return (0);
-}/*
-isascii() - checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
-The values returned are nonzero if the character c falls into the tested class, and a zero value if not. 
-*/
+}

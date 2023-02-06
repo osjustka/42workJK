@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* The ft_strlcat(void) function appends the NUL-terminated string src
+to the end of dst.  It will append at most size - strlen(dst) - 1 bytes,
+NUL-termi‐ nating the result. */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
@@ -38,8 +42,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len_d + len_s);
 }
-/*
-The	strlcat(void) function appends the NUL-terminated string src to the end
-     of dst.  It will append at most size - strlen(dst) - 1 bytes, NUL-termi‐
-     nating the result.
-*/

@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* int atoi(const char *nptr); The atoi() function converts the initial
+portion of the string pointed to by nptr to int.  atoi() does not detect
+errors.  RETURN VALUE: The converted value or 0 on error. min_i - 1 gives
+two's complement representation of -1. */
+
 #include "libft.h"
 
 static int	ft_extrm(int sum, unsigned long long extrm_sum, int sign)
@@ -61,7 +66,4 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (ft_extrm(sum, extrm_sum, sign));
-}/* int atoi(const char *nptr); The atoi() function converts the initial portion of the string pointed to by nptr to int.  atoi() does not detect errors.
-RETURN VALUE: The converted value or 0 on error.
-min_i - 1 gives two's complement representation of -1.
-*/
+}
