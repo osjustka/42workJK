@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp1;
 	t_list	*temp2;
-	
+
 	if (lst == 0 || del == 0 || *lst == 0)
 		return ;
 	temp1 = *lst;
@@ -32,5 +32,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(temp2);
 		temp2 = temp1;
 	}
-	*lst = 0;	
+	*lst = 0;
 }
